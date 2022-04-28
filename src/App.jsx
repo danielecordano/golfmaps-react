@@ -21,7 +21,7 @@ import {
   Brightness5,
   Launch
 } from "@material-ui/icons";
-import Course from "./Course";
+import Course from "./components/Course";
 import augusta from "./course.js";
 
 export default function App() {
