@@ -11,3 +11,16 @@ body,
   height: 100%;
   margin: 0;
 }
+.list {
+  width: auto;
+}
+#opener {
+  position: absolute;
+  z-index: 1;
+  background: white;
+  border-radius: 0;
+}
+.opener:hover, .opener:focus {
+    background: "white";
+  }
+}
