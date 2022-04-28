@@ -1,42 +1,30 @@
-//import "./styles.css";
+import "./styles.css";
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Drawer from "@material-ui/core/Drawer";
-import LinearProgress from "@material-ui/core/LinearProgress";
-import Button from "@material-ui/core/Button";
-import List from "@material-ui/core/List";
-import Divider from "@material-ui/core/Divider";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Switch from "@material-ui/core/Switch";
-import MenuIcon from "@material-ui/icons/Menu";
-import NavigateNextIcon from "@material-ui/icons/NavigateNext";
-import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
-import PlayArrowIcon from "@material-ui/icons/PlayArrow";
-import Brightness5Icon from "@material-ui/icons/Brightness5";
-import LaunchIcon from "@material-ui/icons/Launch";
+import {
+  Drawer,
+  LinearProgress,
+  Button,
+  List,
+  Divider,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  FormControlLabel,
+  Switch
+} from "@material-ui/core";
+
+import {
+  Menu,
+  NavigateNext,
+  NavigateBefore,
+  PlayArrow,
+  Brightness5,
+  Launch
+} from "@material-ui/icons";
 import Course from "./Course";
 import augusta from "./course.js";
 
-const useStyles = makeStyles({
-  list: {
-    width: "auto"
-  },
-  opener: {
-    position: "absolute",
-    zIndex: 1,
-    backgroundColor: "white",
-    borderRadius: 0,
-    "&:hover, &:focus": {
-      backgroundColor: "white"
-    }
-  }
-});
-
 export default function App() {
-  const classes = useStyles();
   const [isOpen, setIsOpen] = useState(false);
   const [course, setCourse] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -147,16 +135,12 @@ export default function App() {
   };
   return (
     <>
-      <Button
-        id="opener"
-        className={classes.opener}
-        onClick={toggleDrawer(true)}
-      >
-        <MenuIcon />
+      <Button id="opener" className="opener" onClick={toggleDrawer(true)}>
+        <Menu />
       </Button>
       <Drawer anchor={"left"} open={isOpen} onClose={toggleDrawer(false)}>
         <div
-          className={classes.list}
+          className="list"
           role="presentation"
           onClick={toggleDrawer(false)}
           onKeyDown={toggleDrawer(false)}
@@ -164,19 +148,19 @@ export default function App() {
           <List>
             <ListItem button onClick={next}>
               <ListItemIcon>
-                <NavigateNextIcon />
+                <NavigateNext />
               </ListItemIcon>
               <ListItemText primary={"Next hole"} />
             </ListItem>
             <ListItem button onClick={prev}>
               <ListItemIcon>
-                <NavigateBeforeIcon />
+                <NavigateBefore />
               </ListItemIcon>
               <ListItemText primary={"Previous hole"} />
             </ListItem>
             <ListItem button onClick={toggleAutoplay}>
               <ListItemIcon>
-                <PlayArrowIcon />
+                <PlayArrow />
               </ListItemIcon>
               <ListItemText
                 primary={isPlaying ? "Stop autoplay" : "Autoplay"}
@@ -201,10 +185,10 @@ export default function App() {
           <List>
             <ListItem button onClick={searchWeather}>
               <ListItemIcon>
-                <Brightness5Icon />
+                <Brightness5 />
               </ListItemIcon>
               <ListItemText primary={"Weather"} />
-              <LaunchIcon />
+              <Launch />
             </ListItem>
           </List>
         </div>
