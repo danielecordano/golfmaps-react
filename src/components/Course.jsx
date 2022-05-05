@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { GoogleMap, InfoWindow, Polyline } from "@react-google-maps/api";
-import "./styles.css";
 /* global google */
 
 function Course({

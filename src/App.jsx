@@ -95,7 +95,7 @@ export default function App() {
         return newCourse;
       });
     },
-    [setCourse, polylinesRef]
+    [polylinesRef]
   );
   const handleLoad = useCallback(
     (index) => (polyline) => {
