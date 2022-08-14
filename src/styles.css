@@ -20,7 +20,7 @@ body,
   background: white;
   border-radius: 0;
 }
-.opener:hover, .opener:focus {
-    background: "white";
-  }
+.opener:hover,
+.opener:focus {
+  background: "white";
 }
